@@ -1,43 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>IB-CBM Trading Assistant</title>
+    <title>IB‑CBM Trade Assistant</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Inside Bar Controlled Breakout Model</h1>
+<h1>Inside Bar Trade Assistant</h1>
 
 <div class="card">
-    <h2>Account Info</h2>
-    <label>Account Balance ($)</label>
-    <input type="number" id="balance" value="1000">
+    <label>Currency Pair (e.g. EURUSD)</label>
+    <input type="text" id="pair" placeholder="EURUSD">
+
+    <label>Account Capital ($)</label>
+    <input type="number" id="capital" placeholder="1000">
 
     <label>Risk % per Trade</label>
     <input type="number" id="riskPercent" value="3">
 </div>
 
-<div class="card">
-    <h2>Market Data</h2>
-    <label>ATR(14)</label>
-    <input type="number" id="atr">
+<button onclick="runAnalysis()">Analyze</button>
 
-    <label>Mother Bar High</label>
-    <input type="number" id="high">
-
-    <label>Mother Bar Low</label>
-    <input type="number" id="low">
-
-    <label>Price above 200 EMA?</label>
-    <select id="trend">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-    </select>
-</div>
-
-<button onclick="calculateTrade()">Check Setup</button>
-
-<div id="result"></div>
+<div id="output"></div>
 
 <script src="script.js"></script>
 
