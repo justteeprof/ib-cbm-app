@@ -1,34 +1,142 @@
-body {
-    font-family: Arial;
-    background: #111;
-    color: white;
-    padding: 20px;
+/* ===== GLOBAL RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* ===== BODY ===== */
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+/* Background Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== CONTAINER ===== */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #00f5ff, #00ff9f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== CARD ===== */
 .card {
-    background: #222;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 255, 200, 0.3);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    color: #00f5ff;
+}
+
+/* ===== INPUTS ===== */
+label {
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 input, select {
     width: 100%;
-    padding: 8px;
-    margin: 5px 0 15px 0;
-}
-
-button {
-    padding: 10px;
-    background: green;
-    color: white;
+    padding: 12px;
+    margin: 8px 0 18px 0;
+    border-radius: 10px;
     border: none;
-    width: 100%;
-    font-size: 16px;
-    cursor: pointer;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
+input:focus, select:focus {
+    background: rgba(0,255,200,0.15);
+    box-shadow: 0 0 10px #00ffcc;
+}
+
+/* ===== BUTTON ===== */
+button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00f5ff, #00ff9f);
+    color: #111;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px #00ffcc;
+}
+
+/* ===== RESULT BOX ===== */
 #result {
-    margin-top: 20px;
-    font-size: 18px;
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(0, 255, 200, 0.1);
+    border: 1px solid rgba(0,255,200,0.3);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (min-width: 768px) {
+
+    body {
+        padding: 50px;
+    }
+
+    .card {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    button {
+        max-width: 600px;
+        margin: auto;
+        display: block;
+    }
+
+    #result {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ===== EXTRA LARGE SCREENS ===== */
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 3rem;
+    }
 }
