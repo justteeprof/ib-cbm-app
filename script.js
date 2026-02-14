@@ -1,5 +1,5 @@
 // Replace with your Twelve Data API key
-const API_KEY = "YOUR_TWELVE_DATA_KEY";
+const API_KEY = "b1bf302451ad4b6b8f1d2831df1548f4";
 
 async function runAnalysis() {
     let pair = document.getElementById("pair").value.toUpperCase();
@@ -121,3 +121,4 @@ function calcEMA(values, length) {
     }
     return emaArray[emaArray.length - 1];
 }
+
