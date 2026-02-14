@@ -1,4 +1,4 @@
-const API_KEY = "YOUR_TWELVE_DATA_KEY";
+const API_KEY = "b1bf302451ad4b6b8f1d2831df1548f4";
 let chart; // global for Chart.js
 
 async function runIBCBM() {
@@ -150,3 +150,4 @@ function calcEMA(values,length){
     }
     return ema[ema.length-1];
 }
+
