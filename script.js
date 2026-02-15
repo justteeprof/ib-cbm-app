@@ -151,3 +151,4 @@ function calcEMA(values,length){
     return ema[ema.length-1];
 }
 
+
