@@ -14,7 +14,8 @@ async function runIBCBM() {
     document.getElementById("output").innerHTML = "⏳ Fetching data...";
 
     const formattedPair = pair.slice(0,3) + "/" + pair.slice(3);
-    const url = `https://api.twelvedata.com/time_series?symbol=${formattedPair}&interval=1day&outputsize=100&apikey=${API_KEY}`;
+    let url = `https://api.twelvedata.com/time_series?symbol=${pair}&interval=1day&outputsize=100&apikey=${API_KEY}`;
+
 
     try {
         const res = await fetch(url);
@@ -150,5 +151,6 @@ function calcEMA(values,length){
     }
     return ema[ema.length-1];
 }
+
 
 
